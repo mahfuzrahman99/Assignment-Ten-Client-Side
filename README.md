@@ -4,9 +4,19 @@
 
 - **Live Link:** [AUTOMOTIVE CARE](https://assignment-ten-1cb40.web.app/)
 
-## Technology's:
+## Sever Repo Link
 
-- CSS, HTML, Tailwindcss, Javascript, react, node.js, express, mongodb,
+- **Live Link:** [AUTOMOTIVE CARE](https://github.com/mahfuzrahman99/Assignment-Ten-Server-Side)
+
+## Tech Stack
+
+*Client:* React, TailwindCSS, 
+
+*Server:* Node, Express
+
+*Database:* MongoDb (Mongoose) 
+
+*Authentication:* Firebase, JWT
 
 ## Overview
 
@@ -36,3 +46,6 @@
 
 7. **Dark and Light Mode Toggle**
    -A toggle feature enabling users to switch between dark and light themes in the app. Enhances visual comfort and personalization with saved mode preference..
+
+
+<img alt="Home Page" src="https://i.ibb.co/qYhCdqj/screencapture-assignment-ten-1cb40-web-app-2023-12-09-13-00-25.png"/>
