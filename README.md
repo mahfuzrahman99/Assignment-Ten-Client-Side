@@ -14,7 +14,7 @@
 
 *Server:* Node, Express
 
-*Database:* MongoDb (Mongoose) 
+*Database:* MongoDb 
 
 *Authentication:* Firebase, JWT
 
