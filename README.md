@@ -6,7 +6,7 @@
 
 ## Sever Repo Link
 
-- **Live Link:** [AUTOMOTIVE CARE](https://github.com/mahfuzrahman99/Assignment-Ten-Server-Side)
+- **Repo Link:** [AUTOMOTIVE CARE](https://github.com/mahfuzrahman99/Assignment-Ten-Server-Side)
 
 ## Tech Stack
 
