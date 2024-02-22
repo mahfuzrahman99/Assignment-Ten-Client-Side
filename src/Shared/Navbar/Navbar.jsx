@@ -33,20 +33,20 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-red-400 underline font-bold"
-              : "font-bold"
+              ? "text-red-400 underline font-bold hover:text-red-400"
+              : "font-bold hover:text-white"
           }
         >
           Home
         </NavLink>
       </li>
       <li>
-        <a href="#about" className="font-bold">
+        <a href="#about" className="font-bold hover:text-white">
           About
         </a>
       </li>
       <li>
-        <a href="#contact" className="font-bold">
+        <a href="#contact" className="font-bold hover:text-white">
           Contact
         </a>
       </li>
@@ -58,11 +58,13 @@ const Navbar = () => {
               isPending
                 ? "pending"
                 : isActive
-                ? "text-red-400 underline font-bold"
-                : "font-bold"
+                ? "text-red-400 underline font-bold hover:text-red-400"
+                : "font-bold hover:text-white"
             }
           >
-            My Cart
+           {
+            admin ? "User Carts" : "My cart"
+           }
           </NavLink>
         ) : (
           ""
@@ -76,8 +78,8 @@ const Navbar = () => {
               isPending
                 ? "pending"
                 : isActive
-                ? "text-red-400 underline font-bold"
-                : "font-bold "
+                ? "text-red-400 underline font-bold hover:text-red-400"
+                : "font-bold hover:text-white"
             }
           >
             Add Product

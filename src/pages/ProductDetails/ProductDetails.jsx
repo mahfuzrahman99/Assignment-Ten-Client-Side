@@ -11,7 +11,6 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 AOS.init();
 
 const ProductDetails = () => {
-
   const parentDivStyle = {
     backgroundImage: `url(${navbarADBG})`,
     backgroundSize: "cover",
@@ -20,6 +19,7 @@ const ProductDetails = () => {
 
   const productDetails = useLoaderData();
   const { user } = useContext(AuthContext);
+  const admin = user?.email === "mahfuzurrahmanshabbir@gmail.com";
   const axiosSecure = useAxiosSecure();
 
   const {
@@ -46,13 +46,12 @@ const ProductDetails = () => {
 
   const newData = Object.assign(newDataToSend, { userEmail: user.email });
 
-  
-
   const [allCartCards, setAllCartCards] = useState([]);
 
   useEffect(() => {
-    axiosSecure.get(`/cart?email=${user?.email}`).then((res) => {
-      setAllCartCards(res.data);
+    axiosSecure.get(`/cart/?email=${user?.email}`).then((res) => {
+      console.log(res);
+      setAllCartCards(res?.data);
     });
   }, [axiosSecure, user]);
 
@@ -113,17 +112,25 @@ const ProductDetails = () => {
             className="p-3 md:p-6 absolute bottom-0 w-full rounded-br-xl rounded-bl-xl"
             style={{ backgroundColor: `rgba(0, 0, 0, 0.5)` }}
           >
-            <Link className="flex justify-between items-center">
-              <button
-                onClick={handleAddToCart}
-                className=" md:btn btn-sm text-black md:text-black bg-blue-400 md:bg-blue-400 rounded-md font-medium"
-              >
-                Add To Cart
-              </button>
+            <p className="flex justify-between items-center">
+              {admin ? (
+                <Link to={`/updateProduct/${_id}`}>
+                  <button className=" md:btn btn-sm text-black md:text-black bg-blue-400 md:bg-blue-400 rounded-md font-medium">
+                    Manage Product
+                  </button>
+                </Link>
+              ) : (
+                <button
+                  onClick={handleAddToCart}
+                  className=" md:btn btn-sm text-black md:text-black bg-blue-400 md:bg-blue-400 rounded-md font-medium"
+                >
+                  Add To Cart
+                </button>
+              )}
               <button className=" md:btn btn-sm text-black md:text-black bg-orange-400 md:bg-orange-400 rounded-md font-medium">
                 Price: ${price}
               </button>
-            </Link>
+            </p>
           </div>
         </div>
         <div className="flex justify-between items-center">
